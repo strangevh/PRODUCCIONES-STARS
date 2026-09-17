@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producciones STARS | XV Años, Bodas y Eventos</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-light: #ffffff;
+            --bg-alt: #faf6f0;
+            --bg-card: #ffffff;
+            --gold-primary: #d4af37;
+            --gold-light: #e5c158;
+            --gold-dark: #b8860b;
+            --text-main: #2d2d2d;
+            --text-muted: #6b6b6b;
+            --border-color: rgba(212, 175, 55, 0.3);
+            --shadow-soft: 0 15px 35px rgba(212, 175, 55, 0.08);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* NAVEGACIÓN LUMINOSA Y ELEGANTE */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.03);
+        }
+
+        .logo span {
+            color: var(--gold-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-primary);
+            transform: translateY(-2px);
+        }
+
+        /* BARRA DE CUENTA REGRESIVA FLOTANTE */
+        .countdown-banner {
+            background: linear-gradient(135deg, #fefbf6, #f4ebdc);
+            color: #2d2d2d;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            position: fixed;
+            top: 65px;
+            width: 100%;
+            z-index: 999;
+            display: none;
+            border-bottom: 1px solid var(--gold-primary);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.12);
+            animation: fadeInDown 0.5s ease;
+        }
+
+        .countdown-banner span {
+            color: var(--gold-dark);
+            font-weight: 700;
+        }
+
+        /* REPRODUCTOR DE MÚSICA AMBIENTAL FLOTANTE */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: var(--text-main);
+            padding: 10px 18px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 998;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .music-player:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.25);
+        }
+
+        .music-player button {
+            background: var(--gold-primary);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .music-player button:hover {
+            transform: scale(1.15) rotate(10deg);
+            background: var(--gold-dark);
+        }
+
+        .music-info {
+            font-size: 0.78rem;
+        }
+
+        .music-info p:first-child {
+            font-weight: 700;
+            color: var(--gold-dark);
+        }
+
+        .music-info p:last-child {
+            color: var(--text-muted);
+            font-size: 0.7rem;
+        }
+
+        /* BOTÓN CARRITO FLOTANTE */
+        .cart-btn {
+            background: linear-gradient(135deg, #d4af37, #f39c12);
+            border: none;
+            padding: 10px 22px;
+            border-radius: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: #fff;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .cart-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 22px rgba(212, 175, 55, 0.5);
+        }
+
+        .cart-count {
+            background: #fff;
+            color: var(--gold-dark);
+            padding: 2px 7px;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            transition: transform 0.2s ease;
+        }
+
+        /* HERO LUMINOSO Y BRILLANTE */
+        .hero {
+            height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.95)), url('fondo.jpeg') center/cover no-repeat;
+            padding: 0 20px;
+            margin-top: 65px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            animation: fadeInDown 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .hero h1 {
+            font-size: 3.6rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, #b8860b, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+        }
+
+        /* BOTONES GENERALES CON EFECTO CLIC (DOWNCLICK) */
+        .btn-gold {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: #fff;
+            padding: 15px 35px;
+            font-weight: 700;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 10px 28px rgba(212, 175, 55, 0.45);
+            background: linear-gradient(135deg, #b8860b, #d4af37);
+        }
+
+        .btn-gold:active, button:active, .card-item:active, .extra-card:active, .builder-checkbox-label:active {
+            transform: scale(0.96) translateY(2px) !important;
+            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.2) !important;
+            transition: transform 0.1s ease, box-shadow 0.1s ease !important;
+        }
+
+        /* SECCIONES Y ANIMACIÓN DE APARICIÓN AL HACER SCROLL */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            font-size: 1.1rem;
+        }
+
+        /* CARRUSEL AUTOMÁTICO */
+        .carousel-container {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            padding: 20px 0;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .carousel-track {
+            display: flex;
+            width: calc(300px * 16);
+            animation: scroll 35s linear infinite;
+        }
+
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        .carousel-slide {
+            width: 300px;
+            height: 380px;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        .carousel-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .carousel-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .carousel-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .carousel-card:hover img {
+            transform: scale(1.12);
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 20px 15px;
+            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+            color: #fff;
+        }
+
+        .carousel-overlay h4 {
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 4px;
+            color: #f3d073;
+        }
+
+        .carousel-overlay p {
+            font-size: 0.82rem;
+            color: #e2e8f0;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-300px * 8)); }
+        }
+
+        /* CARRUSEL DE RESEÑAS REALES */
+        .reviews-container {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            padding: 20px 0;
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+
+        .reviews-track {
+            display: flex;
+            width: calc(350px * 20);
+            animation: scrollReviews 35s linear infinite;
+        }
+
+        .reviews-track:hover {
+            animation-play-state: paused;
+        }
+
+        .review-slide {
+            width: 350px;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        .review-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+        }
+
+        .review-stars {
+            color: var(--gold-dark);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .review-card p {
+            font-style: italic;
+            font-size: 0.92rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        .review-author-info h4 {
+            font-size: 1rem;
+            color: #1a1a1a;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 2px;
+        }
+
+        .review-author-info span {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        @keyframes scrollReviews {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-350px * 10)); }
+        }
+
+        /* FORMULARIO PARA DEJAR RESEÑA */
+        .review-form-box {
+            max-width: 650px;
+            margin: 50px auto 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .review-form-box:hover {
+            box-shadow: 0 20px 45px rgba(212, 175, 55, 0.15);
+        }
+
+        .review-form-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, 
+        .form-group textarea, 
+        .form-group select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
+            background: #fff;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus, 
+        .form-group select:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+            transform: scale(1.01);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 90px;
+        }
+
+        /* CARRUSEL DE ANTES VS DESPUÉS (ENSAYOS DE XV Y BODAS) */
+        .ba-container {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            padding: 20px 0;
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+
+        .ba-track {
+            display: flex;
+            width: calc(400px * 12);
+            animation: scrollBA 35s linear infinite;
+        }
+
+        .ba-track:hover {
+            animation-play-state: paused;
+        }
+
+        .ba-slide {
+            width: 400px;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        .ba-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .ba-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(212, 175, 55, 0.18);
+        }
+
+        .ba-images-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 240px;
+            position: relative;
+        }
+
+        .ba-img-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ba-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .ba-card:hover .ba-img-container img {
+            transform: scale(1.08);
+        }
+
+        .ba-label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #1a1a1a;
+            padding: 3px 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(4px);
+            z-index: 2;
+            border: 1px solid var(--border-color);
+        }
+
+        .ba-label.after {
+            background: var(--gold-primary);
+            color: #fff;
+            border: none;
+        }
+
+        .ba-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .ba-info h3 {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .ba-info p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @keyframes scrollBA {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-400px * 6)); }
+        }
+
+        /* TARJETAS DE PAQUETES LUMINOSAS */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 30px;
+        }
+
+        .card-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 35px 25px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #d4af37, #b8860b);
+            transition: height 0.3s ease;
+        }
+
+        .card-item:hover {
+            border-color: var(--gold-primary);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.2);
+        }
+
+        .card-item:hover::before {
+            height: 8px;
+        }
+
+        .card-item h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .card-item ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .card-item ul li {
+            padding: 10px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            transition: transform 0.2s ease;
+        }
+
+        .card-item ul li:hover {
+            transform: translateX(4px);
+            color: #1a1a1a;
+        }
+
+        .card-item ul li i {
+            color: var(--gold-dark);
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+
+        /* SECCIÓN DE PAQUETE PERSONALIZADO (BUILDER) */
+        .builder-section {
+            background: linear-gradient(135deg, #ffffff, #faf6f0);
+            border: 2px dashed var(--gold-primary);
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 60px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .builder-section:hover {
+            box-shadow: 0 20px 45px rgba(212, 175, 55, 0.18);
+        }
+
+        .builder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .builder-checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .builder-checkbox-label:hover {
+            border-color: var(--gold-primary);
+            background: #fffdf9;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.12);
+        }
+
+        .builder-checkbox-label input {
+            accent-color: var(--gold-primary);
+            width: 18px;
+            height: 18px;
+        }
+
+        /* SERVICIOS EXTRAS */
+        .extras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .extra-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .extra-card:hover {
+            border-color: var(--gold-primary);
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .extra-content {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .extra-card i.icon-main {
+            font-size: 1.8rem;
+            color: var(--gold-dark);
+            transition: transform 0.3s ease;
+        }
+
+        .extra-card:hover i.icon-main {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .extra-info h4 {
+            font-size: 1.05rem;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .extra-info p {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        .btn-add-mini {
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: #fff;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.25);
+        }
+
+        .btn-add-mini:hover {
+            transform: scale(1.2) rotate(90deg);
+            box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+        }
+
+        /* SECCIÓN UBICACIÓN / MAPA */
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .location-container:hover {
+            box-shadow: 0 20px 45px rgba(212, 175, 55, 0.15);
+        }
+
+        .location-info h3 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .location-info p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        .location-details {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .location-details li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            transition: transform 0.2s ease;
+        }
+
+        .location-details li:hover {
+            transform: translateX(4px);
+        }
+
+        .location-details li i {
+            color: var(--gold-dark);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .map-wrapper {
+            width: 100%;
+            height: 380px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .map-wrapper:hover {
+            transform: scale(1.01);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.18);
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* CARRITO / DRAWER ANIMADO */
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 400px;
+            height: 100%;
+            background: #ffffff;
+            border-left: 1px solid var(--border-color);
+            box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+            z-index: 2000;
+            transition: right 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+        }
+
+        .cart-drawer.open {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .cart-header h3 {
+            font-size: 1.4rem;
+            color: #1a1a1a;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .close-cart:hover {
+            color: #1a1a1a;
+            transform: rotate(90deg) scale(1.2);
+        }
+
+        /* CAMPOS DE DETALLES DEL EVENTO EN EL CARRITO */
+        .cart-details-box {
+            background: var(--bg-alt);
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .cart-details-box label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .cart-details-box select, 
+        .cart-details-box input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
+            background: #fff;
+            color: var(--text-main);
+            transition: var(--transition);
+            margin-bottom: 10px;
+        }
+
+        .cart-details-box select:focus, 
+        .cart-details-box input:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+        }
+
+        .cart-items-list {
+            flex-grow: 1;
+            overflow-y: auto;
+            list-style: none;
+            margin-bottom: 20px;
+            padding-right: 5px;
+        }
+
+        .cart-item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.9rem;
+            color: #1a1a1a;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .remove-item {
+            color: #e74c3c;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .remove-item:hover {
+            transform: scale(1.3) rotate(15deg);
+        }
+
+        .cart-footer {
+            border-top: 1px solid rgba(0,0,0,0.08);
+            padding-top: 20px;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(3px);
+            z-index: 1500;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* SECCIÓN CONTACTO */
+        .contact-section {
+            background: var(--bg-alt);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .contact-box {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .contact-box h3 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            margin-bottom: 35px;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-social {
+            background: #fff;
+            color: #1a1a1a;
+            border: 1px solid var(--border-color);
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .btn-social.wa {
+            background: #25d366;
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+        }
+
+        .btn-social.fb {
+            background: #1877f2;
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.25);
+        }
+
+        .btn-social:hover {
+            transform: translateY(-5px) scale(1.03);
+            filter: brightness(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            background: #f4eee6;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* ANIMACIONES CSS */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @media(max-width: 900px) {
+            .location-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links li:not(:last-child) { display: none; }
+            .cart-drawer { width: 100%; right: -100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+
+    <!-- BANNER DE CUENTA REGRESIVA -->
+    <div class="countdown-banner" id="countdownBanner">
+        ✨ ¡Faltan <span id="daysCount">0</span> días, <span id="hoursCount">0</span>h <span id="minutesCount">0</span>m <span id="secondsCount">0</span>s para tu gran evento! ✨
+    </div>
+
+    <!-- REPRODUCTOR DE MÚSICA AMBIENTAL (API AUDIO) -->
+    <div class="music-player">
+        <button id="playMusicBtn" onclick="toggleMusic()"><i class="fa-solid fa-play" id="playIcon"></i></button>
+        <div class="music-info">
+            <p>Vals & Ambiente Estelar</p>
+            <p id="musicStatus">Reproducir música</p>
+        </div>
+        <!-- API de Audio Instrumental / Vals Clásico -->
+        <audio id="bgAudio" loop>
+            <source src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Tchaikovsky_-_Waltz_of_the_Flowers_%28orchestral_version%29.ogg" type="audio/ogg">
+            Tu navegador no soporta audio.
+        </audio>
+    </div>
+
+    <!-- PANEL LATERAL DE CARRITO -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Tu Cotización</h3>
+            <button class="close-cart" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <!-- CAMPOS DE TIPO Y FECHA DEL EVENTO -->
+        <div class="cart-details-box">
+            <label for="eventType"><i class="fa-solid fa-champagne-glasses" style="color: var(--gold-dark); margin-right: 5px;"></i> Tipo de evento:</label>
+            <select id="eventType">
+                <option value="XV Años">XV Años</option>
+                <option value="Boda">Boda</option>
+                <option value="Fiesta">Fiesta</option>
+                <option value="Otro">Otro</option>
+            </select>
+
+            <label for="eventDate"><i class="fa-regular fa-calendar-days" style="color: var(--gold-dark); margin-right: 5px;"></i> Fecha de tu evento:</label>
+            <input type="date" id="eventDate" onchange="initCountdown()" style="margin-bottom: 0;">
+        </div>
+
+        <ul class="cart-items-list" id="cartItemsList">
+            <p style="color: var(--text-muted); text-align: center; margin-top: 30px;" id="emptyCartText">No has agregado ningún paquete aún.</p>
+        </ul>
+        <div class="cart-footer">
+            <button onclick="sendToWhatsApp()" class="btn-gold" style="width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px; background: #25d366; color: #fff;">
+                <i class="fa-brands fa-whatsapp fa-lg"></i> Cotizar vía WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">PRODUCCIONES <span>STARS</span></a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#galeria">Quinceañeras & Eventos</a></li>
+                <li><a href="#testimonios">Reseñas</a></li>
+                <li><a href="#transformacion">Ensayo vs Evento</a></li>
+                <li><a href="#vals">Paquetes</a></li>
+                <li><a href="#personalizado">Arma el tuyo</a></li>
+                <li><a href="#extras">Extras</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li>
+                    <button class="cart-btn" onclick="toggleCart()">
+                        <i class="fa-solid fa-cart-shopping"></i> Cotización <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero" style="opacity: 1; transform: translateY(0);">
+        <div class="hero-content">
+            <h1>Momentos que trascienden en el <span>tiempo</span></h1>
+            <p>Espectáculos visuales, coreografías profesionales y producción de primer nivel para XV años inolvidables.</p>
+            <a href="#vals" class="btn-gold">Ver Paquetes</a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: QUINCEAÑERAS Y SERVICIOS REALES (GALERÍA) -->
+    <section id="galeria" style="background: var(--bg-alt); overflow: hidden;">
+        <h2 class="section-title">Quinceañeras & Momentos Estelares</h2>
+        <p class="section-subtitle">Galería de nuestras hermosas quinceañeras y producción de servicios reales</p>
+
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <!-- 8 Imágenes de Quinceañeras y Servicios Reales -->
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="ALLISON.jpeg" alt="Quinceañera 1">
+                        <div class="carousel-overlay"><h4>XV Años Allison</h4></div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="Alina.jpeg" alt="Quinceañera 2">
+                        <div class="carousel-overlay"><h4>XV años Alina</h4></div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="entrada.jpeg" alt="Quinceañera 3">
+                        <div class="carousel-overlay"><h4>Entrada Monumental</h4></div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="bailenubes.jpeg" alt="Servicio Nubes">
+                        <div class="carousel-overlay"><h4>Baile en las Nubes</h4></div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="chisperos.jpeg" alt="Chisperos">
+                        <div class="carousel-overlay"><h4>Chisperos Fríos</h4></div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="batucada.jpeg" alt="Batucada">
+                        <div class="carousel-overlay"><h4>Show de Batucada</h4></div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="robotled.png" alt="Robot LED">
+                        <div class="carousel-overlay"><h4>Robot LED Show</h4></div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="moderna.jpeg" alt="Baile Moderno">
+                        <div class="carousel-overlay"><h4>Remix & Baile Moderno</h4></div>
+                    </div>
+                </div>
+
+                <!-- Duplicado exacto para efecto infinito fluido -->
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="ALLISON.jpeg" alt="Quinceañera 1">
+                        <div class="carousel-overlay"><h4>XV Años Allison</h4></div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="Alina.jpeg" alt="Quinceañera 2">
+                        <div class="carousel-overlay"><h4>XV años Alina</h4></div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="entrada.jpeg" alt="Quinceañera 3">
+                        <div class="carousel-overlay"><h4>Entrada Monumental</h4></div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="bailenubes.jpeg" alt="Servicio Nubes">
+                        <div class="carousel-overlay"><h4>Baile en las Nubes</h4></div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="chisperos.jpeg" alt="Chisperos">
+                        <div class="carousel-overlay"><h4>Chisperos Fríos</h4></div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="batucada.jpeg" alt="Batucada">
+                        <div class="carousel-overlay"><h4>Show de Batucada</h4></div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="robotled.png" alt="Robot LED">
+                        <div class="carousel-overlay"><h4>Robot LED Show</h4></div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <img src="moderna.jpeg" alt="Baile Moderno">
+                        <div class="carousel-overlay"><h4>Remix & Baile Moderno</h4></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: RESEÑAS REALES CON CARRUSEL DINÁMICO Y FORMULARIO -->
+    <section id="testimonios">
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <p class="section-subtitle">Experiencias reales de quienes confiaron en Producciones STARS</p>
+
+        <!-- Carrusel de Reseñas -->
+        <div class="reviews-container">
+            <div class="reviews-track" id="reviewsTrack">
+                <!-- Las reseñas precargadas y guardadas aparecerán aquí dinámicamente -->
+            </div>
+        </div>
+
+        <!-- Formulario para dejar nueva reseña -->
+        <div class="review-form-box">
+            <h3>✍️ Deja tu reseña sobre nuestros servicios</h3>
+            <form id="reviewForm" onsubmit="addNewReview(event)">
+                <div class="form-group">
+                    <label for="reviewName">Tu Nombre o Nombre de la Familia:</label>
+                    <input type="text" id="reviewName" placeholder="Ej. Fam. Pérez González" required>
+                </div>
+                <div class="form-group">
+                    <label for="reviewEvent">Tipo de Evento o Celebración:</label>
+                    <input type="text" id="reviewEvent" placeholder="Ej. XV Años de Valeria • Pachuca" required>
+                </div>
+                <div class="form-group">
+                    <label for="reviewRating">Calificación:</label>
+                    <select id="reviewRating">
+                        <option value="5">⭐⭐⭐⭐⭐ (5/5 Excelente)</option>
+                        <option value="4">⭐⭐⭐⭐ (4/5 Muy bueno)</option>
+                        <option value="3">⭐⭐⭐ (3/5 Bueno)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="reviewText">Tu Experiencia / Comentario:</label>
+                    <textarea id="reviewText" placeholder="Cuéntanos cómo fue tu ensayo y tu evento con Producciones STARS..." required></textarea>
+                </div>
+                <button type="submit" class="btn-gold" style="width: 100%; text-align: center;">Publicar mi Reseña</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CARRUSEL DE ANTES VS DESPUÉS (ENSAYOS DE XV Y BODAS) -->
+    <section id="transformacion" style="background: var(--bg-alt); overflow: hidden;">
+        <h2 class="section-title">De los Ensayos al Gran Día</h2>
+        <p class="section-subtitle">El proceso en nuestro studio transformado en un espectáculo real</p>
+
+        <div class="ba-container">
+            <div class="ba-track">
+                <!-- Tarjetas actualizadas exclusivamente con Ensayos y Eventos de XV / Bodas -->
+                <div class="ba-slide">
+                    <div class="ba-card">
+                        <div class="ba-images-wrapper">
+                            <div class="ba-img-container">
+                                <span class="ba-label">Antes</span>
+                                <img src="antesh.jpeg" alt="Ensayo Vals">
+                            </div>
+                            <div class="ba-img-container">
+                                <span class="ba-label after">Después</span>
+                                <img src="despuesh.jpeg" alt="Evento XV">
+                            </div>
+                        </div>
+                        <div class="ba-info">
+                            <h3>Vals Principal XV Años</h3>
+                            <p>De la práctica de pasos en el studio a la pista iluminada con chisperos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ba-slide">
+                    <div class="ba-card">
+                        <div class="ba-images-wrapper">
+                            <div class="ba-img-container">
+                                <span class="ba-label">Antes</span>
+                                <img src="antesB.jpeg" alt="Ensayo Boda">
+                            </div>
+                            <div class="ba-img-container">
+                                <span class="ba-label after">Después</span>
+                                <img src="despuesB.jpeg" alt="Evento Boda">
+                            </div>
+                        </div>
+                        <div class="ba-info">
+                            <h3>Primer Baile de Boda</h3>
+                            <p>Ensayo de postura y tiempos llevado al primer baile de esposos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ba-slide">
+                    <div class="ba-card">
+                        <div class="ba-images-wrapper">
+                            <div class="ba-img-container">
+                                <span class="ba-label">Antes</span>
+                                <img src="antesbat.jpeg" alt="Ensayo Batucada">
+                            </div>
+                            <div class="ba-img-container">
+                                <span class="ba-label after">Después</span>
+                                <img src="batucada.jpeg" alt="Evento Fiesta">
+                            </div>
+                        </div>
+                        <div class="ba-info">
+                            <h3>Montaje de Batucada</h3>
+                            <p>Coordinación de energía y accesorios listos para prender la fiesta.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ba-slide">
+                    <div class="ba-card">
+                        <div class="ba-images-wrapper">
+                            <div class="ba-img-container">
+                                <span class="ba-label">Antes</span>
+                                <img src="antesE.jpeg" alt="Ensayo Entrada">
+                            </div>
+                            <div class="ba-img-container">
+                                <span class="ba-label after">Después</span>
+                                <img src="despuesE.jpeg" alt="Evento Entrada">
+                            </div>
+                        </div>
+                        <div class="ba-info">
+                            <h3>Entrada Monumental</h3>
+                            <p>Práctica de formaciones con chambelanes para una entrada perfecta.</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="ba-slide">
+                    <div class="ba-card">
+                        <div class="ba-images-wrapper">
+                            <div class="ba-img-container">
+                                <span class="ba-label">Antes</span>
+                                <img src="antesM.jpeg" alt="Ensayo Moderno">
+                            </div>
+                            <div class="ba-img-container">
+                                <span class="ba-label after">Depois</span>
+                                <img src="despuesM.jpeg" alt="Evento Baile Moderno">
+                            </div>
+                        </div>
+                        <div class="ba-info">
+                            <h3>Entrada XV Años</h3>
+                            <p>Dominando la coreografía dinámica para prender la pista de baile.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplicado exacto para efecto infinito fluido -->
+                <div class="ba-slide">
+                    <div class="ba-card">
+                        <div class="ba-images-wrapper">
+                            <div class="ba-img-container">
+                                <span class="ba-label">Antes</span>
+                                <img src="antesh.jpeg" alt="Ensayo Vals">
+                            </div>
+                            <div class="ba-img-container">
+                                <span class="ba-label after">Después</span>
+                                <img src="despuesh.jpeg" alt="Evento XV">
+                            </div>
+                        </div>
+                        <div class="ba-info">
+                            <h3>Vals Principal XV Años</h3>
+                            <p>De la práctica de pasos en el studio a la pista iluminada con chisperos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ba-slide">
+                    <div class="ba-card">
+                        <div class="ba-images-wrapper">
+                            <div class="ba-img-container">
+                                <span class="ba-label">Antes</span>
+                                <img src="antesB.jpeg" alt="Ensayo Boda">
+                            </div>
+                            <div class="ba-img-container">
+                                <span class="ba-label after">Después</span>
+                                <img src="despuesB.jpeg" alt="Evento Boda">
+                            </div>
+                        </div>
+                        <div class="ba-info">
+                            <h3>Primer Baile de Boda</h3>
+                            <p>Ensayo de postura y tiempos llevado al primer baile de esposos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ba-slide">
+                    <div class="ba-card">
+                        <div class="ba-images-wrapper">
+                            <div class="ba-img-container">
+                                <span class="ba-label">Antes</span>
+                                <img src="antesbat.jpeg" alt="Ensayo Batucada">
+                            </div>
+                            <div class="ba-img-container">
+                                <span class="ba-label after">Después</span>
+                                <img src="batucada.jpeg" alt="Evento Fiesta">
+                            </div>
+                        </div>
+                        <div class="ba-info">
+                            <h3>Montaje de Batucada</h3>
+                            <p>Coordinación de energía y accesorios listos para prender la fiesta.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ba-slide">
+                    <div class="ba-card">
+                        <div class="ba-images-wrapper">
+                            <div class="ba-img-container">
+                                <span class="ba-label">Antes</span>
+                                <img src="antesE.jpeg" alt="Ensayo Entrada">
+                            </div>
+                            <div class="ba-img-container">
+                                <span class="ba-label after">Después</span>
+                                <img src="despuesE.jpeg" alt="Evento Entrada">
+                            </div>
+                        </div>
+                        <div class="ba-info">
+                            <h3>Entrada Monumental</h3>
+                            <p>Práctica de formaciones con chambelanes para una entrada perfecta.</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="ba-slide">
+                    <div class="ba-card">
+                        <div class="ba-images-wrapper">
+                            <div class="ba-img-container">
+                                <span class="ba-label">Antes</span>
+                                <img src="antesM.jpeg" alt="Ensayo Moderno">
+                            </div>
+                            <div class="ba-img-container">
+                                <span class="ba-label after">Depois</span>
+                                <img src="despuesM.jpeg" alt="Evento Baile Moderno">
+                            </div>
+                        </div>
+                        <div class="ba-info">
+                            <h3>Baile Moderno / Remix</h3>
+                            <p>Dominando la coreografía dinámica para prender la pista de baile.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ba-slide">
+                    <div class="ba-card">
+                        <div class="ba-images-wrapper">
+                            <div class="ba-img-container">
+                                <span class="ba-label">Antes</span>
+                                <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=600&auto=format&fit=crop" alt="Ensayo Moderno">
+                            </div>
+                            <div class="ba-img-container">
+                                <span class="ba-label after">Después</span>
+                                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop" alt="Evento Baile Moderno">
+                            </div>
+                        </div>
+                        <div class="ba-info">
+                            <h3>Entrada XV Años</h3>
+                            <p>Dominando la coreografía dinámica para prender la pista de baile.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: VALS PARA XV AÑOS -->
+    <section id="vals">
+        <h2 class="section-title">Vals para XV Años</h2>
+        <p class="section-subtitle">Elige el paquete ideal adaptado al nivel de producción que mereces</p>
+
+        <div class="grid-cards">
+            <!-- BÁSICO -->
+            <div class="card-item">
+                <div>
+                    <h3>Paquete Básico</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Entrada</li>
+                        <li><i class="fa-solid fa-check"></i> Vals</li>
+                        <li><i class="fa-solid fa-check"></i> Moderna</li>
+                    </ul>
+                </div>
+                <button onclick="addToCart('Paquete Básico')" class="btn-gold" style="width: 100%; text-align: center;">Agregar Paquete</button>
+            </div>
+
+            <!-- TRADICIONAL -->
+            <div class="card-item">
+                <div>
+                    <h3>Paquete Tradicional</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Entrada</li>
+                        <li><i class="fa-solid fa-check"></i> Vals</li>
+                        <li><i class="fa-solid fa-check"></i> Ceremonia</li>
+                        <li><i class="fa-solid fa-check"></i> Brindis</li>
+                        <li><i class="fa-solid fa-check"></i> Vals Familiar</li>
+                        <li><i class="fa-solid fa-check"></i> Moderna</li>
+                    </ul>
+                </div>
+                <button onclick="addToCart('Paquete Tradicional')" class="btn-gold" style="width: 100%; text-align: center;">Agregar Paquete</button>
+            </div>
+
+            <!-- PREMIUM -->
+            <div class="card-item">
+                <div>
+                    <h3>Paquete Premium</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Entrada, Vals, Ceremonia</li>
+                        <li><i class="fa-solid fa-check"></i> Brindis y Vals Familiar</li>
+                        <li><i class="fa-solid fa-check"></i> Moderna (s)</li>
+                        <li><i class="fa-solid fa-check"></i> 4 Chambelanes</li>
+                    </ul>
+                </div>
+                <button onclick="addToCart('Paquete Premium')" class="btn-gold" style="width: 100%; text-align: center;">Agregar Paquete</button>
+            </div>
+
+            <!-- PLUS -->
+            <div class="card-item" style="border-color: var(--gold-primary);">
+                <div>
+                    <h3>Paquete Plus</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-star"></i> Entrada, Vals, Ceremonia, Brindis</li>
+                        <li><i class="fa-solid fa-star"></i> Vals Familiar, Moderna (s) & Remix</li>
+                        <li><i class="fa-solid fa-star"></i> 4 Chambelanes & Maestro de Ceremonia</li>
+                        <li><i class="fa-solid fa-star"></i> 4 Chisperos & 10 Detonaciones Bazuca</li>
+                        <li><i class="fa-solid fa-star"></i> 3 Detonaciones Lluvia de Papel</li>
+                        <li><i class="fa-solid fa-star"></i> Carrito de shots (100 vasos)</li>
+                        <li><i class="fa-solid fa-star"></i> Batucada c/ accesorios (100 pers.)</li>
+                        <li><i class="fa-solid fa-star"></i> 2 Letras gigantes con luz</li>
+                    </ul>
+                </div>
+                <button onclick="addToCart('Paquete Plus')" class="btn-gold" style="width: 100%; text-align: center;">Agregar Paquete</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: ARMA TU PAQUETE PERSONALIZADO -->
+    <section id="personalizado">
+        <h2 class="section-title">Arma tu Paquete Personalizado</h2>
+        <p class="section-subtitle">Selecciona paso a paso exactamente lo que necesitas para tu coreografía</p>
+
+        <div class="builder-section">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #1a1a1a; margin-bottom: 20px; text-align: center;">Selecciona los elementos de tu coreografía:</h3>
+            
+            <div class="builder-grid">
+                <label class="builder-checkbox-label">
+                    <input type="checkbox" class="builder-item" value="Coreografía: Entrada"> Entrada
+                </label>
+                <label class="builder-checkbox-label">
+                    <input type="checkbox" class="builder-item" value="Coreografía: Vals Principal"> Vals Principal
+                </label>
+                <label class="builder-checkbox-label">
+                    <input type="checkbox" class="builder-item" value="Coreografía: Ceremonia"> Ceremonia
+                </label>
+                <label class="builder-checkbox-label">
+                    <input type="checkbox" class="builder-item" value="Coreografía: Brindis"> Brindis
+                </label>
+                <label class="builder-checkbox-label">
+                    <input type="checkbox" class="builder-item" value="Coreografía: Vals Familiar"> Vals Familiar
+                </label>
+                <label class="builder-checkbox-label">
+                    <input type="checkbox" class="builder-item" value="Coreografía: Baile Moderno / Remix"> Baile Moderno / Remix
+                </label>
+                <label class="builder-checkbox-label">
+                    <input type="checkbox" class="builder-item" value="Personal: 4 Chambelanes"> 4 Chambelanes
+                </label>
+                <label class="builder-checkbox-label">
+                    <input type="checkbox" class="builder-item" value="Personal: Maestro de Ceremonia"> Maestro de Ceremonia
+                </label>
+            </div>
+
+            <div style="text-align: center;">
+                <button onclick="addCustomPackage()" class="btn-gold"><i class="fa-solid fa-circle-plus"></i> Agregar mi paquete personalizado a la cotización</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: SERVICIOS EXTRAS -->
+    <section id="extras" style="background: var(--bg-alt);">
+        <h2 class="section-title">Servicios Extras</h2>
+        <p class="section-subtitle">Complementa tu evento con efectos especiales y atracciones de alto impacto</p>
+
+        <div class="extras-grid">
+            <div class="extra-card">
+                <div class="extra-content">
+                    <i class="fa-solid fa-fire-sparkles icon-main"></i>
+                    <div class="extra-info">
+                        <h4>Chisperos y de Mano</h4>
+                        <p>Efectos de chispas frías.</p>
+                    </div>
+                </div>
+                <button class="btn-add-mini" onclick="addToCart('Extra: Chisperos y de Mano')" title="Agregar"><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="extra-card">
+                <div class="extra-content">
+                    <i class="fa-solid fa-glass-cheers icon-main"></i>
+                    <div class="extra-info">
+                        <h4>Carrito de Shots</h4>
+                        <p>Barra móvil con animación.</p>
+                    </div>
+                </div>
+                <button class="btn-add-mini" onclick="addToCart('Extra: Carrito de Shots')" title="Agregar"><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="extra-card">
+                <div class="extra-content">
+                    <i class="fa-solid fa-robot icon-main"></i>
+                    <div class="extra-info">
+                        <h4>Robot LED</h4>
+                        <p>Show futurista en pista.</p>
+                    </div>
+                </div>
+                <button class="btn-add-mini" onclick="addToCart('Extra: Robot LED')" title="Agregar"><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="extra-card">
+                <div class="extra-content">
+                    <i class="fa-solid fa-masks-theater icon-main"></i>
+                    <div class="extra-info">
+                        <h4>Bad Bunny Cabezon</h4>
+                        <p>Personaje urbano icónico.</p>
+                    </div>
+                </div>
+                <button class="btn-add-mini" onclick="addToCart('Extra: Bad Bunny Cabezon')" title="Agregar"><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="extra-card">
+                <div class="extra-content">
+                    <i class="fa-solid fa-cloud icon-main"></i>
+                    <div class="extra-info">
+                        <h4>Baile en las Nubes</h4>
+                        <p>Humo espeso a ras de piso.</p>
+                    </div>
+                </div>
+                <button class="btn-add-mini" onclick="addToCart('Extra: Baile en las Nubes')" title="Agregar"><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="extra-card">
+                <div class="extra-content">
+                    <i class="fa-solid fa-font icon-main"></i>
+                    <div class="extra-info">
+                        <h4>Letras Gigantes</h4>
+                        <p>Iniciales o nombres con luz.</p>
+                    </div>
+                </div>
+                <button class="btn-add-mini" onclick="addToCart('Extra: Letras Gigantes')" title="Agregar"><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="extra-card">
+                <div class="extra-content">
+                    <i class="fa-solid fa-fire icon-main"></i>
+                    <div class="extra-info">
+                        <h4>Bazuca de Fuego</h4>
+                        <p>Llamaradas de gran impacto.</p>
+                    </div>
+                </div>
+                <button class="btn-add-mini" onclick="addToCart('Extra: Bazuca de Fuego')" title="Agregar"><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="extra-card">
+                <div class="extra-content">
+                    <i class="fa-solid fa-wind icon-main"></i>
+                    <div class="extra-info">
+                        <h4>Lluvia de Papel</h4>
+                        <p>Cañones de confeti.</p>
+                    </div>
+                </div>
+                <button class="btn-add-mini" onclick="addToCart('Extra: Lluvia de Papel')" title="Agregar"><i class="fa-solid fa-plus"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: UBICACIÓN DEL STUDIO -->
+    <section id="ubicacion">
+        <h2 class="section-title">Visita Nuestro Studio</h2>
+        <p class="section-subtitle">Te esperamos para ensayar y planear cada detalle de tu gran día</p>
+
+        <div class="location-container">
+            <div class="location-info">
+                <h3>Producciones STARS</h3>
+                <p>Ven a conocernos y agenda tu cita con nuestros coreógrafos profesionales.</p>
+                
+                <ul class="location-details">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span><strong>Dirección:</strong> Dr. José Ma Bandera 100A, 20 de Noviembre, 42090 Pachuca de Soto, Hgo.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-clock"></i>
+                        <span><strong>Horarios:</strong> Lunes a Sábado de 10:00 am a 8:00 pm</span>
+                    </li>
+                </ul>
+
+                <a href="https://maps.google.com/?q=Dr.+Jose+Ma+Bandera+100A+20+de+Noviembre+42090+Pachuca+de+Soto+Hgo" target="_blank" class="btn-gold" style="display: inline-flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-map-location-dot"></i> Cómo llegar en Google Maps
+                </a>
+            </div>
+
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.696805178044!2d-98.738!3d20.123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDA3JzIyLjgiTiA5OMKwNDQnMTguOCJX!5e0!3m2!1ses!2smx!4v1650000000000!5m2!1ses!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact-section">
+        <div class="contact-box">
+            <h3>¿Listo para hacer vibrar tu evento?</h3>
+            <p>Selecciona tus paquetes arriba o escríbenos directamente para atención personalizada.</p>
+            <div class="social-buttons">
+                <a href="https://wa.me/527713185785" target="_blank" class="btn-social wa">
+                    <i class="fa-brands fa-whatsapp fa-lg"></i> WhatsApp Directo
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="btn-social fb">
+                    <i class="fa-brands fa-facebook-f fa-lg"></i> Facebook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Producciones STARS. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT DE ANIMACIONES AVANZADAS, INTERACTIVIDAD Y LOCALSTORAGE -->
+    <script>
+        let cart = [];
+        let countdownInterval = null;
+
+        let defaultReviews = [
+            {
+                name: "Fam. Hernández Ruiz",
+                event: "XV Años de Ximena • Pachuca",
+                rating: 5,
+                text: "¡La coreografía de los XV años de mi hija quedó de película! Los chambelanes muy profesionales, puntuales y atentos en cada ensayo en el studio."
+            },
+            {
+                name: "Carlos & Andrea",
+                event: "Boda Estelar • Salón Real",
+                rating: 5,
+                text: "El baile en las nubes y los chisperos en nuestra boda superaron todas nuestras expectativas. Hicieron que nuestra noche fuera inolvidable."
+            },
+            {
+                name: "Valeria Gómez",
+                event: "XV Años • Mineral de la Reforma",
+                rating: 5,
+                text: "Contratamos el Paquete Plus con la batucada y el carrito de shots. ¡Nadie se sentó en toda la noche! El ambiente estuvo al máximo nivel."
+            },
+            {
+                name: "Marco Antonio Domínguez",
+                event: "Padre de Quinceañera",
+                rating: 5,
+                text: "La atención en el studio de Pachuca fue excelente desde el primer día. Tienen una paciencia increíble para enseñar los pasos a todos los chambelanes."
+            },
+            {
+                name: "Sofía Morales",
+                event: "Comité de Graduación",
+                rating: 5,
+                text: "El show del Robot LED dejó a todos con la boca abierta. Le dio un toque súper moderno y futurista a la fiesta de graduación. ¡Muy recomendados!"
+            }
+        ];
+
+        function getSavedReviews() {
+            const saved = localStorage.getItem('stars_reviews');
+            if (saved) {
+                try { return JSON.parse(saved); } catch(e) { return defaultReviews; }
+            }
+            return defaultReviews;
+        }
+
+        function renderReviews() {
+            const track = document.getElementById('reviewsTrack');
+            const reviews = getSavedReviews();
+            
+            let htmlContent = '';
+            for (let i = 0; i < 4; i++) {
+                reviews.forEach(rev => {
+                    let starsHTML = '';
+                    for (let s = 0; s < rev.rating; s++) { starsHTML += '<i class="fa-solid fa-star"></i>'; }
+
+                    htmlContent += `
+                        <div class="review-slide">
+                            <div class="review-card">
+                                <div>
+                                    <div class="review-stars">${starsHTML}</div>
+                                    <p>"${rev.text}"</p>
+                                </div>
+                                <div class="review-author-info">
+                                    <h4>${rev.name}</h4>
+                                    <span>${rev.event}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            track.innerHTML = htmlContent;
+        }
+
+        function addNewReview(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('reviewName').value.trim();
+            const eventInfo = document.getElementById('reviewEvent').value.trim();
+            const rating = parseInt(document.getElementById('reviewRating').value);
+            const text = document.getElementById('reviewText').value.trim();
+
+            if (!name || !eventInfo || !text) {
+                alert("Por favor completa todos los campos.");
+                return;
+            }
+
+            const newReview = { name, event: eventInfo, rating, text };
+            let reviews = getSavedReviews();
+            reviews.unshift(newReview);
+            localStorage.setItem('stars_reviews', JSON.stringify(reviews));
+
+            renderReviews();
+            document.getElementById('reviewForm').reset();
+            alert("✨ ¡Muchas gracias! Tu reseña ha sido publicada y guardada exitosamente.");
+        }
+
+        function initScrollAnimations() {
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            sections.forEach(sec => {
+                if(sec.id !== 'inicio') {
+                    observer.observe(sec);
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderReviews();
+            initScrollAnimations();
+        });
+
+        function toggleCart() {
+            const drawer = document.getElementById('cartDrawer');
+            const overlay = document.getElementById('overlay');
+            drawer.classList.toggle('open');
+            overlay.classList.toggle('active');
+        }
+
+        function addToCart(itemName) {
+            cart.push(itemName);
+            updateCartUI();
+            
+            const countBadge = document.getElementById('cartCount');
+            countBadge.style.transform = 'scale(1.5)';
+            setTimeout(() => { countBadge.style.transform = 'scale(1)'; }, 300);
+
+            const drawer = document.getElementById('cartDrawer');
+            if (!drawer.classList.contains('open')) {
+                toggleCart();
+            }
+        }
+
+        function addCustomPackage() {
+            const checkboxes = document.querySelectorAll('.builder-item:checked');
+            if (checkboxes.length === 0) {
+                alert("Por favor selecciona al menos un elemento para tu paquete personalizado.");
+                return;
+            }
+
+            cart.push("--- Paquete Personalizado ---");
+            checkboxes.forEach(cb => {
+                cart.push(cb.value);
+                cb.checked = false;
+            });
+
+            updateCartUI();
+            
+            const countBadge = document.getElementById('cartCount');
+            countBadge.style.transform = 'scale(1.5)';
+            setTimeout(() => { countBadge.style.transform = 'scale(1)'; }, 300);
+
+            const drawer = document.getElementById('cartDrawer');
+            if (!drawer.classList.contains('open')) {
+                toggleCart();
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const list = document.getElementById('cartItemsList');
+            const count = document.getElementById('cartCount');
+
+            count.innerText = cart.length;
+
+            if (cart.length === 0) {
+                list.innerHTML = `<p style="color: var(--text-muted); text-align: center; margin-top: 30px;" id="emptyCartText">No has agregado ningún paquete aún.</p>`;
+                return;
+            }
+
+            list.innerHTML = '';
+            cart.forEach((item, index) => {
+                if (item.includes("---")) {
+                    list.innerHTML += `<li style="font-weight: 700; color: var(--gold-dark); margin-top: 10px; font-size: 0.85rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 4px;">${item}</li>`;
+                } else {
+                    list.innerHTML += `
+                        <li class="cart-item-row">
+                            <span><i class="fa-solid fa-star" style="color: var(--gold-dark); margin-right: 8px; font-size: 0.75rem;"></i> ${item}</span>
+                            <button class="remove-item" onclick="removeFromCart(${index})"><i class="fa-solid fa-trash"></i></button>
+                        </li>
+                    `;
+                }
+            });
+        }
+
+        function initCountdown() {
+            const eventDateInput = document.getElementById('eventDate').value;
+            const banner = document.getElementById('countdownBanner');
+
+            if (!eventDateInput) {
+                banner.style.display = 'none';
+                return;
+            }
+
+            banner.style.display = 'block';
+            const eventTime = new Date(eventDateInput + "T00:00:00").getTime();
+
+            if (countdownInterval) clearInterval(countdownInterval);
+
+            countdownInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = eventTime - now;
+
+                if (distance < 0) {
+                    document.getElementById('daysCount').innerText = "0";
+                    document.getElementById('hoursCount').innerText = "0";
+                    document.getElementById('minutesCount').innerText = "0";
+                    document.getElementById('secondsCount').innerText = "0";
+                    clearInterval(countdownInterval);
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('daysCount').innerText = days;
+                document.getElementById('hoursCount').innerText = hours;
+                document.getElementById('minutesCount').innerText = minutes;
+                document.getElementById('secondsCount').innerText = seconds;
+            }, 1000);
+        }
+
+        function toggleMusic() {
+            const audio = document.getElementById('bgAudio');
+            const icon = document.getElementById('playIcon');
+            const status = document.getElementById('musicStatus');
+
+            if (audio.paused) {
+                audio.play().then(() => {
+                    icon.className = "fa-solid fa-pause";
+                    status.innerText = "Reproduciendo vals";
+                }).catch(e => {
+                    document.addEventListener('click', () => {
+                        audio.play();
+                        icon.className = "fa-solid fa-pause";
+                        status.innerText = "Reproduciendo vals";
+                    }, { once: true });
+                });
+            } else {
+                audio.pause();
+                icon.className = "fa-solid fa-play";
+                status.innerText = "Pausado";
+            }
+        }
+
+        function sendToWhatsApp() {
+            if (cart.length === 0) {
+                alert("Por favor selecciona al menos un paquete o servicio antes de cotizar.");
+                return;
+            }
+
+            const eventType = document.getElementById('eventType').value;
+            const eventDate = document.getElementById('eventDate').value;
+
+            let message = "¡Hola! Me gustaría cotizar los siguientes paquetes y servicios:\n\n";
+            
+            message += `🎉 *Tipo de evento:* ${eventType}\n`;
+            if (eventDate) {
+                message += `📅 *Fecha del evento:* ${eventDate}\n`;
+            }
+            
+            message += "\n";
+
+            cart.forEach((item, idx) => {
+                if (item.includes("---")) {
+                    message += `\n${item}\n`;
+                } else {
+                    message += `- ${item}\n`;
+                }
+            });
+            message += "\n¿Me pueden confirmar precio, disponibilidad y dar más detalles?";
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/527713185785?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+
+</body>
+</html>
